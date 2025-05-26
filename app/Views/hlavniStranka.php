@@ -1,6 +1,6 @@
 <?php
 $this->extend('sablonaStranek/sablonaStranky');
-$this->section('section');
+$this->section('section')
 ?>
 text
 <?= $this->endSection() ?>
