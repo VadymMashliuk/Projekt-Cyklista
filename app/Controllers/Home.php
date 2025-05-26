@@ -18,6 +18,7 @@ class Home extends BaseController
     }
     public function hlavniStranka()
     {
-        echo view("hlavniStranka");
+        $data["zavodyZenskeKategorie"] = $this->race_year->where('sex', 'W')->findAll();
+        echo view("hlavniStranka", $data);
     }
 }
