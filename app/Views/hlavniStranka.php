@@ -55,12 +55,15 @@ $this->section('section');
 				$logo = ['data' => $row->logo ? '<img src="' . esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-',
                         'class' => 'text-center'];
                 $table->addRow(
-					$year,
+                    ['data' => $row->year, 'class' => 'text-center'],
                     $row->real_name,
-					$start_date,
-					$end_date,
-					$logo,
-					'blabla'
+                    ['data' => date('d.m.Y', strtotime($row->start_date)), 'class' => 'text-center'],
+                    ['data' => date('d.m.Y', strtotime($row->end_date)), 'class' => 'text-center'],
+                    [
+                        'data' => $row->logo ? '<img src="' . base_url()."/Loga"."/".esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-',
+                        'class' => 'text-center'
+                    ],
+                    ['data' => $row->country ?? '-', 'class' => 'text-center']
                 );
             }
             
