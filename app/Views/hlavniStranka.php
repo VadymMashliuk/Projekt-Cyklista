@@ -2,7 +2,7 @@
 $this->extend('sablonaStranek/sablonaStranky');
 $this->section('section')
 ?>
-<p class="">text</p>
+<p class="">text blabla</p>
 <?php
 $table = new \CodeIgniter\View\Table();
 $pole = array('Rok', 'Závod', 'Datum zahájení', 'Datum ukončení', 'Logo', 'Země');
