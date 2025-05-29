@@ -54,16 +54,16 @@ $this->section('section');
 				$end_date = ['data' => date('d.m.Y', strtotime($row->end_date)), 'class' => 'text-center'];
 				$logo = ['data' => $row->logo ? '<img src="' . esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-',
                         'class' => 'text-center'];
-                $table->addRow(
+                /*$table->addRow(
 					$year,
                     $row->real_name,
 					$start_date,
 					$end_date,
 					$logo,
-					/*?>
+					?>
 					<span class="fi fi-<?= $row->country ?>"></span>
-					<?php*/
-                );
+					<?php
+                );*/
             }
             
             echo $table->generate();
