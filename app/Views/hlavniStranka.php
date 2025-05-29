@@ -55,7 +55,7 @@ $this->section('section');
                     ['data' => date('d.m.Y', strtotime($row->start_date)), 'class' => 'text-center'],
                     ['data' => date('d.m.Y', strtotime($row->end_date)), 'class' => 'text-center'],
                     [
-                        'data' => $row->logo ? '<img src="' . esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-',
+                        'data' => $row->logo ? '<img src="' . base_url()."/Loga"."/".esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-',
                         'class' => 'text-center'
                     ],
                     ['data' => $row->country ?? '-', 'class' => 'text-center']
