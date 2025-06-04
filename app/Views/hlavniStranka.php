@@ -53,6 +53,7 @@ $this->section('section');
 				$start_date = ['data' => date('d.m.Y', strtotime($row->start_date)), 'class' => 'text-center'];
 				$end_date = ['data' => date('d.m.Y', strtotime($row->end_date)), 'class' => 'text-center'];
 				//$logo = ['data' => $row->logo ? '<img src="' . esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-', 'class' => 'text-center'];
+                $zeme = '<span class="fi fi-'.$row->country.'"></span>';
                 $table->addRow($year,
                     $row->real_name,
                     $start_date,
@@ -61,7 +62,7 @@ $this->section('section');
                         'data' => $row->logo ? '<img src="' . base_url()."/Loga"."/".esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-',
                         'class' => 'text-center'
                     ],
-                    $row->country
+                    $zeme
                 );
             }
             
