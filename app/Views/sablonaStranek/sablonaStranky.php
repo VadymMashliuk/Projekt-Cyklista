@@ -6,6 +6,8 @@
 	<?= $this->include('sablonaStranek/knihovny') ?>
 </head>
 <body>
+	<div class="container">
 		<?= $this->renderSection('section') ?>
+	<div>
 </body>
 </html>

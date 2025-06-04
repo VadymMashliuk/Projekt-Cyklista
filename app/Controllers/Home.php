@@ -21,4 +21,9 @@ class Home extends BaseController
         $data["zavodyZenskeKategorie"] = $this->race_year->where('sex', 'W')->findAll();
         echo view("hlavniStranka", $data);
     }
+    public function pridaniZavodu()
+    {
+        helper('form');
+        echo view("pridaniZavodu");
+    }
 }
