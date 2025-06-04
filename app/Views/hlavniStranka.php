@@ -6,6 +6,11 @@ $this->section('section');
 <div class="container-xl">
     <title>Závody ženské kategorie</title>
     <div class="card shadow-sm">
+        <?php
+        $tlacitko = array('type' => 'button',
+        'class' => 'btn btn-success');
+        echo anchor('pridaniZavodu', 'Přidat závod', $tlacitko);
+        ?>
         <div class="card-header bg-primary text-white">
             <h3 class="card-title mb-0">Závody ženské kategorie</h3>
         </div>
@@ -63,8 +68,7 @@ $this->section('section');
                         'data' => $row->logo ? '<img src="' . base_url()."/Loga"."/".esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-',
                         'class' => 'text-center'
                     ],
-                    $zeme
-                );
+                    $zeme);
             }
             
             echo $table->generate();
