@@ -16,9 +16,22 @@ class Home extends BaseController
     {
         return view('welcome_message');
     }
-    public function hlavniStranka()
+    public function roky()
     {
-        $data["zavodyZenskeKategorie"] = $this->race_year->where('sex', 'W')->findAll();
+        // Získání unikátních roků z databáze
+        $builder = $this->race_year->builder();
+        $query = $builder->select('year')
+                        ->distinct()
+                        ->orderBy('year', 'DESC')
+                        ->get();
+        
+        $data['roky'] = $query->getResult();
+        
+        return view('roky', $data);
+    }
+    public function hlavniStranka($rok)
+    {
+        $data["zavodyZenskeKategorie"] = $this->race_year->where('sex', 'W')->where("year",$rok)->findAll();
         echo view("hlavniStranka", $data);
     }
     public function pridaniZavodu()
