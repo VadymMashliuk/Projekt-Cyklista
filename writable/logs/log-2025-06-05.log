@@ -906,3 +906,103 @@ GROUP BY `country`', [...], false)
 10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-05 06:19:54 --> mysqli_sql_exception: Column 'year' cannot be null in C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ra...', 0)
+#1 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ra...')
+#2 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ra...')
+#3 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ra...', Array, false)
+#4 C:\laragon\www\Projekt-Cyklista\app\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+#6 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\laragon\www\Projekt-Cyklista\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-06-05 06:19:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'year' cannot be null
+[Method: POST, Route: ulozeniZavodu]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (:sex:, :year:, :real_name:, :start_date:, :end_date:, :category:, :country:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 06:19:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'year' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (:sex:, :year:, :real_name:, :start_date:, :end_date:, :category:, :country:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 06:19:54 --> [Caused by] mysqli_sql_exception: Column 'year' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (:sex:, :year:, :real_name:, :start_date:, :end_date:, :category:, :country:)', [...], false)
+ 5 APPPATH\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-06-05 06:21:04 --> mysqli_sql_exception: Column 'year' cannot be null in C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `ra...', 0)
+#1 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ra...')
+#2 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ra...')
+#3 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ra...', Array, false)
+#4 C:\laragon\www\Projekt-Cyklista\app\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+#6 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\laragon\www\Projekt-Cyklista\vendor\codeigniter4\framework\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\laragon\www\Projekt-Cyklista\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-06-05 06:21:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'year' cannot be null
+[Method: POST, Route: ulozeniZavodu]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (:sex:, :year:, :real_name:, :start_date:, :end_date:, :category:, :country:)', [...], false)
+ 2 APPPATH\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 06:21:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'year' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (:sex:, :year:, :real_name:, :start_date:, :end_date:, :category:, :country:)', [...], false)
+ 4 APPPATH\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-06-05 06:21:04 --> [Caused by] mysqli_sql_exception: Column 'year' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (\'W\', NULL, \'\', \'\', \'\', NULL, \'\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `race_year` (`sex`, `year`, `real_name`, `start_date`, `end_date`, `category`, `country`) VALUES (:sex:, :year:, :real_name:, :start_date:, :end_date:, :category:, :country:)', [...], false)
+ 5 APPPATH\Controllers\Home.php(60): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Home->ulozeniZavodu()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

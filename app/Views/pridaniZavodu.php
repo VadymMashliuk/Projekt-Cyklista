@@ -37,6 +37,7 @@ $this->section('section');
 	<label for="browser" class="form-label">Vyberte stát</label>
     <input class="form-control" list="browsers" name="country" id="browser">
     <datalist id="browsers">
+		<option selected disabled>-----</option>
 		<?php
 		foreach ($zavodyZenskeKategorie as $row)
 		{
