@@ -48,6 +48,7 @@ class Home extends BaseController
         $start_date = $this->request->getPost('start_date');
         $end_date = $this->request->getPost('end_date');
         $category = $this->request->getPost('category');
+        $country = $this->request->getPost('country');
         $databaze = \Config\Database::connect();
         $stavitel = $databaze->table('race_year');
         $stavitel->insert(['sex' => $sex,
@@ -55,7 +56,8 @@ class Home extends BaseController
         'real_name' => $real_name,
         'start_date' => $start_date,
         'end_date' => $end_date,
-        'category' => $category]);
+        'category' => $category,
+        'country' => $country]);
         return redirect()->to('/');
     }
 }
