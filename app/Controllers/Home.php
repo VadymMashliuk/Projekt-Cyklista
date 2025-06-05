@@ -24,7 +24,8 @@ class Home extends BaseController
     public function pridaniZavodu()
     {
         helper('form');
-        echo view("pridaniZavodu");
+        $data["zavodyZenskeKategorie"] = $this->race_year->select('country')->where('sex', 'W')->groupBy('country')->get()->getResult();
+        echo view("pridaniZavodu", $data);
     }
     public function ulozeniZavodu()
     {

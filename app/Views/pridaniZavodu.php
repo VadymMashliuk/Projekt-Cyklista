@@ -34,6 +34,18 @@ $this->section('section');
 	  	<option>J</option>
 	  	<option>U23</option>
     </select>
+	<label for="browser" class="form-label">Vyberte stát</label>
+    <input class="form-control" list="browsers" name="country" id="browser">
+    <datalist id="browsers">
+		<?php
+		foreach ($zavodyZenskeKategorie as $row)
+		{
+			?>
+			<option value="<?= $row->country ?>">
+			<?php
+		}
+		?>
+    </datalist>
 </div>
 <button type="submit" class="btn btn-primary">Uložit</button>
 <?= form_close() ?>
