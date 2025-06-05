@@ -2,6 +2,7 @@
 $this->extend('sablonaStranek/sablonaStranky');
 $this->section('section');
 ?>
+<title>Výběr roku</title>
 <div class="container mt-4">
     <h2>ročníky závodů</h2>
     <div class="list-group mt-3">
