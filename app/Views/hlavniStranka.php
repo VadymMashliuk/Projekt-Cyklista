@@ -18,7 +18,6 @@ $this->section('section');
             <?php
             $table = new \CodeIgniter\View\Table();
             
-            // Nastavení záhlaví tabulky
             $headers = [
                 ['data' => 'Rok', 'class' => 'text-center'],
                 'Závod',
@@ -29,7 +28,6 @@ $this->section('section');
             ];
             $table->setHeading($headers);
             
-            // Šablona pro stylování tabulky
             $template = [
                 'table_open' => '<table class="table table-bordered table-hover mb-0">',
                 'thead_open' => '<thead class="thead-light">',
@@ -53,12 +51,10 @@ $this->section('section');
             
             $table->setTemplate($template);
             
-            // Naplnění tabulky daty
             foreach ($zavodyZenskeKategorie as $row) {
 				$year =  ['data' => $row->year, 'class' => 'text-center'];
 				$start_date = ['data' => date('d.m.Y', strtotime($row->start_date)), 'class' => 'text-center'];
 				$end_date = ['data' => date('d.m.Y', strtotime($row->end_date)), 'class' => 'text-center'];
-				//$logo = ['data' => $row->logo ? '<img src="' . esc($row->logo) . '" alt="Logo" class="img-fluid" style="max-height: 40px;">' : '-', 'class' => 'text-center'];
                 $zeme = '<span class="fi fi-'.$row->country.'"></span>';
                 $table->addRow($year,
                     $row->real_name,

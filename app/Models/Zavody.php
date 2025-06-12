@@ -11,4 +11,5 @@ class Zavody extends Model
 	protected $returnType    = 'object';
     protected $allowedFields = [];
     protected $useTimestamps = false;
+    protected $useAutoIncrement = true;
 }

@@ -18,7 +18,6 @@ class Home extends BaseController
     }
     public function roky()
     {
-        // Získání unikátních roků z databáze
         $builder = $this->race_year->builder();
         $query = $builder->select('year')
                         ->distinct()
@@ -49,9 +48,9 @@ class Home extends BaseController
         $end_date = $this->request->getPost('end_date');
         $category = $this->request->getPost('category');
         $country = $this->request->getPost('country');
-        $databaze = \Config\Database::connect();
-        $stavitel = $databaze->table('race_year');
-        $stavitel->insert(['sex' => $sex,
+       
+       
+        $this->race_year->insert(['sex' => $sex,
         'year' => $year,
         'real_name' => $real_name,
         'start_date' => $start_date,
