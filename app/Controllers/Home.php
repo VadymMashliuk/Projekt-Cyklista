@@ -48,9 +48,9 @@ class Home extends BaseController
         $end_date = $this->request->getPost('end_date');
         $category = $this->request->getPost('category');
         $country = $this->request->getPost('country');
-       
-       
-        $this->race_year->insert(['sex' => $sex,
+        $databaze = \Config\Database::connect();
+        $stavitel = $databaze->table('race_year');
+        $stavitel->insert(['sex' => $sex,
         'year' => $year,
         'real_name' => $real_name,
         'start_date' => $start_date,
